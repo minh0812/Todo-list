@@ -1,0 +1,12 @@
+<div class="input-group mb-3">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Add todo..."
+    aria-label="Add todo..."
+    aria-describedby="button-addon2"
+    [(ngModel)]="todo"
+  />
+  <button class="btn btn-primary" type="button" id="button-addon2" (click)="addTodo(todo)">Add</button>
+</div>
+<app-todo-item *ngFor="let todo of data" [todo]="todo" (check)="checkTodo($event)" (remove)="removeTodo($event)"></app-todo-item>

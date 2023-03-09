@@ -1,0 +1,24 @@
+<div class="input-group mb-3">
+  <div class="input-group-text">
+    <input
+      class="form-check-input mt-0"
+      type="checkbox"
+      value=""
+      aria-label="Checkbox for following text input"
+      [checked]="todo.check"
+      (change)="checkTodo()"
+    />
+  </div>
+  <input
+    type="text"
+    class="form-control title"
+    aria-label="Text input with checkbox"
+    [value]="todo.name"
+    [ngClass]="{ 'text-decoration-line-through': todo.check }"
+    (click)="checkTodo()"
+    readonly
+  />
+  <span class="icon" (click)="removeTodo()">
+    <i class="fa-regular fa-trash-can"></i>
+  </span>
+</div>
